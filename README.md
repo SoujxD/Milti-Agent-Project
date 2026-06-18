@@ -1,339 +1,151 @@
-# Multi-Agent Business Analytics System
+# Multi-Agent Business Analytics
 
-This project is a production-style Generative AI course project that combines two cooperating agents with a rigorous evaluation loop:
+A LangGraph-orchestrated, RAG-powered analyst that turns an ecommerce CSV into
+structured business answers, benchmarks itself, and exports a stakeholder
+PowerPoint deck. Built on **LangChain**, **LangGraph**, **ChromaDB**, **Ragas**,
+and **Pydantic**, with a Streamlit UI.
 
-- A **Data Analyst RAG Agent** answers business questions over an e-commerce dataset.
-- A **Presentation Generator Agent** turns dataset insights into charts and a stakeholder-ready PowerPoint deck.
-- A **Streamlit web app** exposes the workflow in an interactive executive-style demo.
-- A **GitHub Pages static site** gives you a public-facing link for project submission and reporting.
-- A **multi-model, multi-prompt evaluation pipeline** compares prompt strategies, model choices, and RAG versus no-RAG behavior.
+Runs fully **offline with no API key** via a deterministic mock fallback, so
+demos and grading work without any paid models.
 
-The project is designed to run end to end even without paid APIs. If an `OPENROUTER_API_KEY` is available, the analyst agent will call OpenRouter. Otherwise it falls back to a deterministic mock model so the system remains fully runnable for demos and grading.
+## What's inside
 
-## Folder Structure
+| Module | What it does |
+|---|---|
+| `utils/lc_retriever.py` | Persistent ChromaDB vector store using HuggingFace MiniLM embeddings, with a TF-IDF `BaseRetriever` fallback. |
+| `agents/analyst_agent.py` | Two analyst paths: legacy `AnalystRAGAgent` (used by the factorial eval) and `run_analyst_lc` returning a strict Pydantic `AnalystAnswer`. |
+| `agents/graph.py` | LangGraph supervisor wiring `START -> supervisor -> {analyst, presenter, END}` with LLM-based or rule-based routing. |
+| `agents/presentation_agent.py` | Auto-detects schema and builds a 7-slide `.pptx` with charts and speaker notes. |
+| `evaluation/evaluator.py` | Factorial benchmark across models x prompt styles x RAG on/off with 10+ scoring metrics. |
+| `evaluation/ragas_eval.py` | Ragas RAG quality grader: Faithfulness, ResponseRelevancy, ContextPrecision, ContextRecall. |
+| `ui/app.py` | Streamlit UI: Overview / EDA / Analyst / Presentation / Evaluation tabs. |
+| `api/server.py` | FastAPI server exposing the analyst, summary, and presentation endpoints. |
 
-```text
-project/
-├── agents/
-│   ├── __init__.py
-│   ├── analyst_agent.py
-│   └── presentation_agent.py
-├── api/
-│   ├── __init__.py
-│   └── server.py
-├── data/
-│   ├── dataset.csv
-│   ├── evaluation_questions.json
-│   └── generate_sample_data.py
-├── docs/
-│   ├── index.html
-│   ├── analyst.html
-│   ├── evaluation.html
-│   ├── presentation.html
-│   ├── app.js
-│   ├── config.js
-│   └── styles.css
-├── evaluation/
-│   ├── __init__.py
-│   ├── evaluator.py
-│   └── metrics.py
-├── outputs/
-│   └── ...
-├── ui/
-│   └── app.py
-├── utils/
-│   ├── __init__.py
-│   ├── llm_client.py
-│   ├── parser.py
-│   └── retriever.py
-├── Dockerfile
-├── fly.toml
-├── main.py
-├── README.md
-├── requirements.txt
-└── requirements.fly.txt
-```
+## Stack
 
-## System Architecture
+- **LLM:** `ChatOpenAI` (gpt-4o-mini) via LangChain, or OpenRouter; deterministic mock when no key is set.
+- **Vector store:** ChromaDB persistent index, `sentence-transformers/all-MiniLM-L6-v2` embeddings.
+- **Multi-agent orchestration:** LangGraph supervisor pattern.
+- **Structured outputs:** Pydantic + `with_structured_output`.
+- **Evaluation:** Ragas + a custom factorial benchmark.
 
-The architecture is intentionally modular:
-
-1. `utils/retriever.py` loads the e-commerce dataset and builds a retriever.
-2. `agents/analyst_agent.py` retrieves relevant evidence, builds a prompt, and requests a JSON answer from the selected model.
-3. `evaluation/evaluator.py` runs the analyst agent across 4 models, 4 prompt styles, and 100 questions, with both RAG on and off.
-4. `evaluation/metrics.py` computes quantitative metrics.
-5. `agents/presentation_agent.py` creates dataset-focused charts and exports a 7-slide PowerPoint deck.
-6. `ui/app.py` exposes all major functionality in a Streamlit web app.
-7. `docs/index.html` serves as the static GitHub Pages site.
-
-Architecture flow:
-
-```text
-Business question
-  -> Retriever (FAISS if available, TF-IDF fallback)
-  -> Analyst Agent
-  -> Structured JSON output
-  -> Evaluation Pipeline
-  -> Aggregated metrics + top examples
-  -> Presentation Generator Agent
-  -> Streamlit web interface / downloadable PPT
-```
-
-## Dataset
-
-The sample dataset follows the **Online Shoppers Intention** schema and includes:
-
-- Administrative and informational browsing activity
-- Product-related activity and durations
-- Bounce and exit rates
-- Page values and seasonal features
-- Visitor type, browser, region, and traffic source
-- Binary revenue label
-
-The included `data/generate_sample_data.py` script creates:
-
-- `data/dataset.csv`
-- `data/evaluation_questions.json`
-
-The evaluation file contains 100 business questions with:
-
-- `question`
-- `category`
-- `expected_variables`
-- `expected_type`
-- `ground_truth`
-- `numeric_answer`
-- `expected_keywords`
-
-## Metrics
-
-The evaluation pipeline computes four metrics:
-
-- `keyword_score`: fraction of expected keywords covered by the answer
-- `recommendation_score`: measures whether recommendations are present and actionable
-- `completeness_score`: checks whether all required JSON fields are populated
-- `groundedness_score`: estimates overlap between the generated answer and retrieved context
-
-An `overall_score` is also computed as the simple average of the four metrics.
-
-## Installation
-
-Use Python 3.10+.
+## Quick start
 
 ```bash
-cd /Users/shubhangimittal/Desktop/ISE547/project
-python3 -m venv .venv
-source .venv/bin/activate
+git clone https://github.com/SoujxD/Milti-Agent-Project.git
+cd Milti-Agent-Project
+python -m venv .venv
+# Windows:  .venv\Scripts\activate
+# macOS/Linux:  source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-If you want live model calls:
+Optional, for real LLM calls (everything still works without these):
 
 ```bash
-export OPENROUTER_API_KEY="your_key_here"
+# bash / zsh
+export OPENAI_API_KEY=sk-...
+export OPENROUTER_API_KEY=or-...
+
+# PowerShell
+$env:OPENAI_API_KEY="sk-..."
+$env:OPENROUTER_API_KEY="or-..."
 ```
 
-## Generate Data
+## Run it
 
-If you want to regenerate the sample data:
+| Command | What it does |
+|---|---|
+| `python main.py demo --question "..."` | Single legacy analyst answer. |
+| `python main.py graph --question "..."` | LangGraph supervisor (analyst, plus presenter if the question mentions a deck). |
+| `python main.py evaluate --limit 20 --no-judge` | Factorial benchmark grid (models x prompts x RAG on/off). |
+| `python main.py ragas --limit 20` | Ragas RAG evaluation (skips gracefully without a key). |
+| `python main.py presentation` | One-click PowerPoint deck from the dataset. |
+| `streamlit run ui/app.py` | Full UI at `http://localhost:8501`. |
+| `uvicorn api.server:app --reload --port 8000` | FastAPI backend. |
 
-```bash
-python data/generate_sample_data.py
+## How the LangGraph supervisor decides
+
+Without an LLM key, the supervisor uses a deterministic rule:
+
+- No analysis yet -> `analyst`.
+- Question mentions `deck` / `slides` / `presentation` / `powerpoint` / `ppt` and no deck yet -> `presenter`.
+- Otherwise -> `FINISH`.
+
+With `OPENAI_API_KEY` set, the supervisor instead uses
+`ChatOpenAI(...).with_structured_output(RouterDecision)` to route between
+`analyst`, `presenter`, and `FINISH`.
+
+## Dataset
+
+The bundled `data/dataset.csv` follows the **UCI Online Shoppers Intention**
+schema (page activity, durations, bounce/exit rates, page values, visitor type,
+traffic source, binary revenue label). The retriever turns each row into a
+Document and adds one summary Document with dataset-level aggregates. The
+first run builds and persists a Chroma index at `data/chroma_db/` (gitignored);
+subsequent runs load it from disk in milliseconds.
+
+The 100-question bank at `data/evaluation_questions.json` includes
+`question`, `category`, `expected_variables`, `expected_keywords`,
+`ground_truth`, and `numeric_answer` for scoring.
+
+## Evaluation metrics
+
+`python main.py evaluate` scores each analyst run on:
+
+- `keyword_score`, `recommendation_score`, `completeness_score`
+- `groundedness_score`, `business_specificity_score`, `retrieval_usefulness_score`
+- `json_validity_score`, `unique_insight_ratio`, `avg_response_length`, `insight_count`
+- Optional LLM-as-judge ratings (`usefulness`, `clarity`, `correctness`) with a heuristic fallback when no key is set.
+
+`python main.py ragas` scores:
+
+- **Faithfulness**, **ResponseRelevancy**, **LLMContextPrecisionWithoutReference**, **LLMContextRecall**.
+  Requires an LLM judge; without `OPENAI_API_KEY` it writes a `{"status": "skipped"}` placeholder.
+
+## Mock vs real
+
+| Component | With API key | Without |
+|---|---|---|
+| Old analyst (`answer_question`) | Calls OpenRouter | Deterministic JSON from prompt+model hash |
+| New analyst (`run_analyst_lc`) | `ChatOpenAI` with structured output | Mock JSON coerced into `AnalystAnswer` |
+| Supervisor routing | LLM picks the next agent | Rule-based |
+| LLM-as-judge (legacy eval) | Real judge model | Rubric-based heuristic |
+| Ragas | Real Faithfulness/Relevancy/Context scores | Skips cleanly |
+| Embeddings | MiniLM (local) | MiniLM (local) |
+
+## Deployment
+
+- **Streamlit UI**: `streamlit run ui/app.py` or deploy to Streamlit Community Cloud.
+- **FastAPI backend**: Dockerfile + `fly.toml` included. Deploy with `flyctl deploy`. Configure the GitHub Pages frontend by setting `API_BASE_URL` in `docs/config.js`.
+- **GitHub Pages**: serve the static site from `docs/` (Settings -> Pages -> Deploy from branch, select `main` and `/docs`).
+
+## Folder layout
+
+```
+agents/        analyst, presenter, LangGraph supervisor
+api/           FastAPI server
+data/          dataset.csv, evaluation_questions.json, sample generator
+docs/          static GitHub Pages site
+evaluation/    factorial benchmark + Ragas pipeline
+ui/            Streamlit app
+utils/         retrievers, LLM client, parsers, dataset adapter
+main.py        CLI entrypoint
 ```
 
-## Run the Analyst Agent Demo
+## Design notes
 
-```bash
-python main.py demo \
-  --question "Which traffic sources and visitor segments should we prioritize?" \
-  --model meta-llama/llama-3.1-8b-instruct \
-  --prompt-style structured_json
-```
+- The mock fallback is preserved end-to-end: ChatOpenAI -> mock; LLM-judge -> heuristic; Chroma -> TF-IDF; Ragas -> skip.
+- The TF-IDF fallback is wrapped behind a LangChain `BaseRetriever` so the rest of the code stays retriever-agnostic.
+- The LangGraph presenter currently triggers a dataset-driven deck and does not yet thread `analyst_output` into slide content (a planned refinement).
+- Real Ragas scores require a paid LLM judge; the no-key run is a clean skip.
 
-Disable RAG for comparison:
+## Versions
 
-```bash
-python main.py demo \
-  --question "How can we improve conversion?" \
-  --model mistralai/mistral-7b-instruct \
-  --prompt-style executive \
-  --no-rag
-```
+Built against:
 
-## Run Experiments
-
-Full evaluation:
-
-```bash
-python main.py evaluate
-```
-
-Quick smoke test:
-
-```bash
-python main.py evaluate --limit 20
-```
-
-Outputs written to `outputs/`:
-
-- `results.csv`
-- `model_comparison.csv`
-- `prompt_comparison.csv`
-- `rag_comparison.csv`
-- `category_comparison.csv`
-
-## Generate the Presentation
-
-```bash
-python main.py presentation
-```
-
-The presentation agent creates:
-
-- `outputs/presentation.pptx`
-- chart images under `outputs/charts/`
-- mirrored public assets under `docs/assets/`
-
-The generated deck is intentionally focused on the dataset and business insights:
-
-1. Title
-2. Dataset Snapshot
-3. Target Customers
-4. Behavioral Patterns
-5. Recommendations
-6. Key Findings
-7. Conclusion
-
-Each slide includes:
-
-- a title
-- up to 5 bullets
-- speaker notes
-
-## Launch the Streamlit Website
-
-```bash
-streamlit run ui/app.py
-```
-
-The UI contains four tabs:
-
-1. **Overview**
-2. **Analyst Agent Demo**
-3. **Evaluation Dashboard**
-4. **Presentation Generator**
-
-The site supports model and prompt selection, RAG toggling, evaluation visualization, executive text responses, slide preview, and PPT download.
-
-## Public Website via GitHub Pages
-
-Use the `docs/` folder to publish a public website:
-
-1. Push the repository to GitHub.
-2. Open **Settings -> Pages** in the GitHub repository.
-3. Choose **Deploy from a branch**.
-4. Select your main branch and the `/docs` folder.
-5. Save the settings to receive a public URL.
-
-Important deployment note:
-
-- GitHub Pages can host the static project site in `docs/`.
-- GitHub Pages cannot run the Python agents directly.
-- This repository now includes a FastAPI backend in `api/server.py` so the public HTML pages can call live analyst and presentation endpoints.
-- Use `docs/` on GitHub Pages for the frontend and deploy the FastAPI backend separately on Render, Railway, or another Python host.
-
-## Public App Architecture
-
-Recommended production split:
-
-1. **Frontend**: GitHub Pages serving `docs/`
-2. **Backend**: FastAPI serving `api/server.py`
-
-Available backend endpoints:
-
-- `GET /health`
-- `POST /api/summary`
-- `POST /api/analyst`
-- `POST /api/presentation`
-- `GET /api/downloads/{filename}`
-
-The HTML frontend will use the backend automatically when `docs/config.js` contains a non-empty `API_BASE_URL`.
-
-Example:
-
-```js
-window.APP_CONFIG = {
-  API_BASE_URL: "https://your-backend-service.onrender.com"
-};
-```
-
-## Deploy the Backend on Fly.io
-
-This repo includes:
-
-- [Dockerfile](/Users/shubhangimittal/Desktop/ISE547/project/Dockerfile)
-- [fly.toml](/Users/shubhangimittal/Desktop/ISE547/project/fly.toml)
-- [requirements.fly.txt](/Users/shubhangimittal/Desktop/ISE547/project/requirements.fly.txt)
-
-Basic steps:
-
-1. Push the repository to GitHub.
-2. Authenticate with Fly.io using `flyctl auth login`.
-3. Create the app if needed: `flyctl apps create <app-name>`.
-4. Set required secrets such as:
-   - `flyctl secrets set OPENROUTER_API_KEY=... -a <app-name>`
-   - `flyctl secrets set ALLOWED_ORIGINS=https://your-github-pages-domain -a <app-name>`
-5. Deploy with `flyctl deploy -c fly.toml -a <app-name>`.
-6. Copy the deployed backend URL into `docs/config.js`.
-7. Push again and redeploy GitHub Pages.
-
-## Local Backend Run
-
-You can also run the API locally:
-
-```bash
-uvicorn api.server:app --reload --port 8000
-```
-
-Then set:
-
-```js
-window.APP_CONFIG = {
-  API_BASE_URL: "http://127.0.0.1:8000"
-};
-```
-
-## Prompt Styles
-
-The analyst agent supports four prompt styles:
-
-- `basic`
-- `structured_json`
-- `executive`
-- `evidence_constrained`
-
-## Models
-
-By default the system evaluates these four inexpensive-compatible model identifiers:
-
-- `meta-llama/llama-3.1-8b-instruct`
-- `mistralai/mistral-7b-instruct`
-- `google/gemma-2-9b-it`
-- `qwen/qwen-2.5-7b-instruct`
-
-These can be replaced with any OpenRouter-supported models.
-
-## Error Handling and Design Notes
-
-- The retriever uses a safe TF-IDF fallback by default and only enables sentence-transformer embeddings when `ENABLE_SENTENCE_TRANSFORMERS=true`.
-- The LLM client falls back to a deterministic mock JSON generator if API access fails.
-- JSON parsing is tolerant of fenced code blocks and malformed outputs.
-- The Streamlit UI warns the user when evaluation artifacts are missing.
-
-## Future Improvements
-
-- Replace heuristic metrics with LLM-as-a-judge and human evaluation.
-- Add persistent vector storage instead of rebuilding retrieval in memory.
-- Support direct use of the original Kaggle dataset instead of the bundled sample data.
-- Add authentication and deployment configuration for a public demo site.
-- Extend the presentation agent with branded templates and richer notes formatting.
+- `langchain 1.3+`, `langchain-core 1.4+`, `langgraph 1.2+`, `langgraph-supervisor 0.0.31`
+- `chromadb 1.5+`, `langchain-chroma 1.1+`
+- `ragas 0.4+`, `datasets 4.8+`
+- `langfuse 4.6+`, `pydantic 2.7+`
+- Python 3.11+
