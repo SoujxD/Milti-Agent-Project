@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+data/chroma_db/
+outputs/*.csv
+outputs/*.json
+outputs/*.pptx
+outputs/charts/*.png
+outputs/uploads/
+outputs/api_uploads/
+outputs/api_presentations/

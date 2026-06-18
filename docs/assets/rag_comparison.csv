@@ -1,0 +1,3 @@
+rag_enabled,keyword_score,recommendation_score,completeness_score,groundedness_score,business_specificity_score,json_validity_score,retrieval_usefulness_score,unique_insight_ratio,avg_response_length,insight_count,judge_usefulness,judge_clarity,judge_correctness,judge_average,overall_score,enhanced_overall_score
+True,0.19999999999999998,0.454185,1.0,0.09418246078356532,0.61875,1.0,0.23048000000000002,1.0,13.32208375,3.6125,3.6223125000000005,4.443875,1.9871874999999999,3.3511175,0.43709,0.59131625
+False,0.03802083333333333,0.5417,1.0,0.0,0.21875,1.0,0.0,1.0,14.228125,3.875,3.295625,4.475,1.175,2.98188125,0.394951875,0.44199124999999995

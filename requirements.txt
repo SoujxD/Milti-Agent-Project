@@ -1,0 +1,35 @@
+# existing
+pandas>=2.1.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
+matplotlib>=3.8.0
+streamlit>=1.33.0
+python-pptx>=0.6.23
+requests>=2.31.0
+faiss-cpu>=1.8.0
+sentence-transformers>=2.7.0
+fastapi>=0.111.0
+uvicorn>=0.30.0
+python-multipart>=0.0.9
+
+# NEW — LangChain / LangGraph stack
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langgraph>=0.2.50
+langgraph-supervisor>=0.0.6
+
+# NEW — Vector store + embeddings
+chromadb>=0.5.0
+langchain-chroma>=0.1.4
+
+# NEW — Evaluation
+ragas>=0.2.0
+datasets>=2.20.0
+
+# NEW — Observability  (pick one — LangFuse is free self-hosted)
+langfuse>=2.50.0
+
+# NEW — Structured outputs (already a langchain dep, but pin)
+pydantic>=2.7.0

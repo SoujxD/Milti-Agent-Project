@@ -1,0 +1,1752 @@
+[
+  {
+    "id": 1,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 49,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 50,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 51,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 52,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 53,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 54,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 55,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 56,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 57,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 58,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 59,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 60,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 61,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 62,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 63,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 64,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 65,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 66,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 67,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 68,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 69,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 70,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 71,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 72,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 73,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 74,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 75,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 76,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 77,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 78,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 79,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 80,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 81,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 82,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 83,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 84,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 85,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 86,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 87,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 88,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 89,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 90,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 91,
+    "category": "trend",
+    "question": "Which month has the highest conversion rate?",
+    "expected_variables": [
+      "Month",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Nov has the highest conversion rate.",
+    "numeric_answer": 0.5970149253731343,
+    "expected_keywords": [
+      "month",
+      "conversion",
+      "nov"
+    ]
+  },
+  {
+    "id": 92,
+    "category": "segmentation",
+    "question": "Which visitor type converts best?",
+    "expected_variables": [
+      "VisitorType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Returning_Visitor converts best.",
+    "numeric_answer": 0.458041958041958,
+    "expected_keywords": [
+      "visitor",
+      "conversion",
+      "returning_visitor"
+    ]
+  },
+  {
+    "id": 93,
+    "category": "segmentation",
+    "question": "Which traffic source drives the highest conversion?",
+    "expected_variables": [
+      "TrafficType",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "TrafficType 2 drives the highest conversion.",
+    "numeric_answer": 0.47058823529411764,
+    "expected_keywords": [
+      "traffic",
+      "source",
+      "conversion"
+    ]
+  },
+  {
+    "id": 94,
+    "category": "comparison",
+    "question": "Do weekends perform better than weekdays?",
+    "expected_variables": [
+      "Weekend",
+      "Revenue"
+    ],
+    "expected_type": "directional",
+    "ground_truth": "Weekday sessions convert slightly better than weekend sessions.",
+    "numeric_answer": 0.3836065573770492,
+    "expected_keywords": [
+      "weekend",
+      "weekday",
+      "conversion"
+    ]
+  },
+  {
+    "id": 95,
+    "category": "recommendation",
+    "question": "What actions would you recommend to improve conversion?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "BounceRates",
+      "VisitorType"
+    ],
+    "expected_type": "actionable",
+    "ground_truth": "Reduce bounce rates, improve high-value product pages, and prioritize returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "recommendation",
+      "bounce",
+      "page value",
+      "returning visitors"
+    ]
+  },
+  {
+    "id": 96,
+    "category": "correlation",
+    "question": "How does bounce rate relate to conversion?",
+    "expected_variables": [
+      "BounceRates",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher bounce rates are associated with lower conversion.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "bounce",
+      "conversion",
+      "negative"
+    ]
+  },
+  {
+    "id": 97,
+    "category": "correlation",
+    "question": "How does page value relate to revenue?",
+    "expected_variables": [
+      "PageValues",
+      "Revenue"
+    ],
+    "expected_type": "correlation",
+    "ground_truth": "Higher page values are associated with higher revenue probability.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page value",
+      "revenue",
+      "positive"
+    ]
+  },
+  {
+    "id": 98,
+    "category": "recommendation",
+    "question": "Which region should marketing prioritize?",
+    "expected_variables": [
+      "Region",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Region 9 currently shows the strongest conversion signal.",
+    "numeric_answer": 9.0,
+    "expected_keywords": [
+      "region",
+      "marketing",
+      "prioritize"
+    ]
+  },
+  {
+    "id": 99,
+    "category": "segmentation",
+    "question": "Which browser segment shows the best conversion performance?",
+    "expected_variables": [
+      "Browser",
+      "Revenue"
+    ],
+    "expected_type": "categorical",
+    "ground_truth": "Browser 11 shows the strongest conversion performance.",
+    "numeric_answer": 11.0,
+    "expected_keywords": [
+      "browser",
+      "conversion",
+      "segment"
+    ]
+  },
+  {
+    "id": 100,
+    "category": "pattern",
+    "question": "What patterns stand out among revenue-generating sessions?",
+    "expected_variables": [
+      "Revenue",
+      "PageValues",
+      "ProductRelated",
+      "VisitorType"
+    ],
+    "expected_type": "descriptive",
+    "ground_truth": "Revenue sessions tend to have higher page values, more product-related activity, and more returning visitors.",
+    "numeric_answer": null,
+    "expected_keywords": [
+      "page values",
+      "product",
+      "returning visitors"
+    ]
+  }
+]

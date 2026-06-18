@@ -1,0 +1,17 @@
+,average_value
+keyword_score,0.11901041666666665
+recommendation_score,0.4979424999999999
+completeness_score,1.0
+groundedness_score,0.04709123039178266
+business_specificity_score,0.41875
+json_validity_score,1.0
+retrieval_usefulness_score,0.11523999999999998
+unique_insight_ratio,1.0
+avg_response_length,13.775104375000002
+insight_count,3.74375
+judge_usefulness,3.4589687499999995
+judge_clarity,4.4594375
+judge_correctness,1.5810937500000002
+judge_average,3.166499375
+overall_score,0.4160209375
+enhanced_overall_score,0.51665375
