@@ -1,0 +1,449 @@
+{
+  "profile": {
+    "source_format": "tabular",
+    "analysis_grain": "rows",
+    "raw_rows": 420,
+    "analysis_rows": 420,
+    "columns": 18,
+    "schema": {
+      "target": "Revenue",
+      "time": "Month",
+      "customer": "VisitorType",
+      "channel": "TrafficType",
+      "product": null,
+      "engagement": "PageValues",
+      "friction": "BounceRates"
+    },
+    "target_rate": 0.38333333333333336,
+    "top_time": "Nov",
+    "top_customer": "Returning_Visitor",
+    "top_channel": "2",
+    "top_product_dimension": "Unavailable",
+    "numeric_columns": [
+      "Administrative",
+      "Administrative_Duration",
+      "Informational",
+      "Informational_Duration",
+      "ProductRelated",
+      "ProductRelated_Duration",
+      "ExitRates",
+      "SpecialDay",
+      "OperatingSystems",
+      "Browser"
+    ]
+  },
+  "quality_checks": {
+    "duplicate_rows": 0,
+    "missing_summary": [
+      {
+        "column": "Administrative",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Administrative_Duration",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Informational",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Informational_Duration",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "ProductRelated",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "ProductRelated_Duration",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "BounceRates",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "ExitRates",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "PageValues",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "SpecialDay",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Month",
+        "missing_pct": 0.0
+      },
+      {
+        "column": "OperatingSystems",
+        "missing_pct": 0.0
+      }
+    ],
+    "null_heavy_columns": [],
+    "constant_columns": [],
+    "high_cardinality_columns": [],
+    "numeric_outliers": [
+      {
+        "column": "SpecialDay",
+        "count": 36,
+        "share": 0.08571428571428572
+      },
+      {
+        "column": "Informational_Duration",
+        "count": 11,
+        "share": 0.02619047619047619
+      },
+      {
+        "column": "Administrative_Duration",
+        "count": 10,
+        "share": 0.023809523809523808
+      },
+      {
+        "column": "ProductRelated_Duration",
+        "count": 9,
+        "share": 0.02142857142857143
+      },
+      {
+        "column": "Administrative",
+        "count": 6,
+        "share": 0.014285714285714285
+      },
+      {
+        "column": "PageValues",
+        "count": 3,
+        "share": 0.007142857142857143
+      }
+    ],
+    "warnings": [
+      "No major structural data quality issues were detected."
+    ]
+  },
+  "chart_manifest": [
+    {
+      "key": "time_area",
+      "title": "Trend across time",
+      "caption": "Uses a light area chart to show how the main business signal changes across the detected time field.",
+      "path": "streamlit_dataset_79700_time_area.png",
+      "filename": "streamlit_dataset_79700_time_area.png"
+    },
+    {
+      "key": "mix_doughnut",
+      "title": "Share of top TrafficType groups",
+      "caption": "Summarizes the dominant business segments with a compact doughnut view.",
+      "path": "streamlit_dataset_79700_mix_doughnut.png",
+      "filename": "streamlit_dataset_79700_mix_doughnut.png"
+    },
+    {
+      "key": "engagement_scatter",
+      "title": "PageValues vs Revenue",
+      "caption": "Shows how a strong numeric behavior signal relates to the detected outcome variable.",
+      "path": "streamlit_dataset_79700_engagement_scatter.png",
+      "filename": "streamlit_dataset_79700_engagement_scatter.png"
+    }
+  ],
+  "suggested_questions": [
+    "Which VisitorType values should we prioritize based on performance?",
+    "Which TrafficType groups appear strongest for future investment?",
+    "How does performance change across Month?",
+    "How does PageValues relate to purchase or conversion behavior?",
+    "Which data quality issues should we address before deeper analysis?"
+  ],
+  "handoff_summary": {
+    "dataset_type": "tabular",
+    "analysis_grain": "rows",
+    "target_column": "Revenue",
+    "time_column": "Month",
+    "customer_dimensions": [
+      "VisitorType"
+    ],
+    "channel_dimensions": [
+      "TrafficType"
+    ],
+    "engagement_metric": "PageValues",
+    "friction_metric": "BounceRates",
+    "quality_warnings": [
+      "No major structural data quality issues were detected."
+    ],
+    "top_patterns": [
+      "Detected outcome rate is 38.3% at the rows level.",
+      "Strongest detected customer grouping is Returning_Visitor.",
+      "Strongest detected channel or acquisition grouping is 2.",
+      "Best-performing time grouping is Nov."
+    ],
+    "recommended_questions": [
+      "Which VisitorType values should we prioritize based on performance?",
+      "Which TrafficType groups appear strongest for future investment?",
+      "How does performance change across Month?",
+      "How does PageValues relate to purchase or conversion behavior?",
+      "Which data quality issues should we address before deeper analysis?"
+    ]
+  },
+  "retrieval_chunks": [
+    "EDA profile: source format tabular, analysis grain rows, raw rows 420, analysis rows 420.",
+    "Schema detection: target=Revenue, time=Month, customer=VisitorType, channel=TrafficType, product=None, engagement=PageValues.",
+    "Top findings: top customer=Returning_Visitor, top channel=2, top time=Nov, target rate=0.38333333333333336.",
+    "Quality warning: No major structural data quality issues were detected.",
+    "Suggested analyst question: Which VisitorType values should we prioritize based on performance?",
+    "Suggested analyst question: Which TrafficType groups appear strongest for future investment?",
+    "Suggested analyst question: How does performance change across Month?",
+    "Suggested analyst question: How does PageValues relate to purchase or conversion behavior?",
+    "Suggested analyst question: Which data quality issues should we address before deeper analysis?",
+    "Chart insight: Trend across time \u2014 Uses a light area chart to show how the main business signal changes across the detected time field.",
+    "Chart insight: Share of top TrafficType groups \u2014 Summarizes the dominant business segments with a compact doughnut view.",
+    "Chart insight: PageValues vs Revenue \u2014 Shows how a strong numeric behavior signal relates to the detected outcome variable."
+  ],
+  "key_findings": [
+    "Detected outcome rate is 38.3% at the rows level.",
+    "Strongest detected customer grouping is Returning_Visitor.",
+    "Strongest detected channel or acquisition grouping is 2.",
+    "Best-performing time grouping is Nov.",
+    "PageValues is the most useful detected engagement-style metric for this dataset."
+  ],
+  "preview": [
+    {
+      "Administrative": 3,
+      "Administrative_Duration": 169.727,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 30,
+      "ProductRelated_Duration": 1167.689,
+      "BounceRates": 0.0657,
+      "ExitRates": 0.0857,
+      "PageValues": 22.747,
+      "SpecialDay": 0.2,
+      "Month": "Feb",
+      "OperatingSystems": 4,
+      "Browser": 7,
+      "Region": 2,
+      "TrafficType": 2,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": true
+    },
+    {
+      "Administrative": 1,
+      "Administrative_Duration": 20.901,
+      "Informational": 3,
+      "Informational_Duration": 91.647,
+      "ProductRelated": 24,
+      "ProductRelated_Duration": 1043.93,
+      "BounceRates": 0.0454,
+      "ExitRates": 0.0761,
+      "PageValues": 20.025,
+      "SpecialDay": 0.0,
+      "Month": "Oct",
+      "OperatingSystems": 5,
+      "Browser": 5,
+      "Region": 7,
+      "TrafficType": 5,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 4,
+      "Administrative_Duration": 85.135,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 33,
+      "ProductRelated_Duration": 1579.858,
+      "BounceRates": 0.0837,
+      "ExitRates": 0.0875,
+      "PageValues": 14.864,
+      "SpecialDay": 0.0,
+      "Month": "Sep",
+      "OperatingSystems": 7,
+      "Browser": 5,
+      "Region": 5,
+      "TrafficType": 4,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": true
+    },
+    {
+      "Administrative": 4,
+      "Administrative_Duration": 145.728,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 29,
+      "ProductRelated_Duration": 912.867,
+      "BounceRates": 0.0821,
+      "ExitRates": 0.0665,
+      "PageValues": 10.602,
+      "SpecialDay": 0.0,
+      "Month": "June",
+      "OperatingSystems": 5,
+      "Browser": 10,
+      "Region": 3,
+      "TrafficType": 4,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 0,
+      "Administrative_Duration": 0.0,
+      "Informational": 1,
+      "Informational_Duration": 46.983,
+      "ProductRelated": 28,
+      "ProductRelated_Duration": 1152.278,
+      "BounceRates": 0.0849,
+      "ExitRates": 0.1304,
+      "PageValues": 24.24,
+      "SpecialDay": 0.4,
+      "Month": "Aug",
+      "OperatingSystems": 7,
+      "Browser": 7,
+      "Region": 6,
+      "TrafficType": 3,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": true
+    },
+    {
+      "Administrative": 3,
+      "Administrative_Duration": 128.579,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 21,
+      "ProductRelated_Duration": 987.471,
+      "BounceRates": 0.0171,
+      "ExitRates": 0.0201,
+      "PageValues": 0.0,
+      "SpecialDay": 0.0,
+      "Month": "Sep",
+      "OperatingSystems": 4,
+      "Browser": 13,
+      "Region": 3,
+      "TrafficType": 8,
+      "VisitorType": "New_Visitor",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 4,
+      "Administrative_Duration": 189.118,
+      "Informational": 3,
+      "Informational_Duration": 75.354,
+      "ProductRelated": 24,
+      "ProductRelated_Duration": 581.303,
+      "BounceRates": 0.0112,
+      "ExitRates": 0.0446,
+      "PageValues": 1.298,
+      "SpecialDay": 0.4,
+      "Month": "June",
+      "OperatingSystems": 5,
+      "Browser": 6,
+      "Region": 4,
+      "TrafficType": 1,
+      "VisitorType": "Other",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 1,
+      "Administrative_Duration": 28.136,
+      "Informational": 1,
+      "Informational_Duration": 30.912,
+      "ProductRelated": 24,
+      "ProductRelated_Duration": 799.463,
+      "BounceRates": 0.0695,
+      "ExitRates": 0.092,
+      "PageValues": 0.0,
+      "SpecialDay": 0.0,
+      "Month": "June",
+      "OperatingSystems": 1,
+      "Browser": 6,
+      "Region": 7,
+      "TrafficType": 7,
+      "VisitorType": "New_Visitor",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 3,
+      "Administrative_Duration": 121.41,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 30,
+      "ProductRelated_Duration": 1354.944,
+      "BounceRates": 0.0959,
+      "ExitRates": 0.092,
+      "PageValues": 10.194,
+      "SpecialDay": 0.0,
+      "Month": "Sep",
+      "OperatingSystems": 4,
+      "Browser": 2,
+      "Region": 3,
+      "TrafficType": 6,
+      "VisitorType": "New_Visitor",
+      "Weekend": false,
+      "Revenue": true
+    },
+    {
+      "Administrative": 3,
+      "Administrative_Duration": 122.446,
+      "Informational": 0,
+      "Informational_Duration": 0.0,
+      "ProductRelated": 30,
+      "ProductRelated_Duration": 1034.942,
+      "BounceRates": 0.0709,
+      "ExitRates": 0.0656,
+      "PageValues": 11.568,
+      "SpecialDay": 0.0,
+      "Month": "June",
+      "OperatingSystems": 6,
+      "Browser": 10,
+      "Region": 9,
+      "TrafficType": 3,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": true,
+      "Revenue": true
+    },
+    {
+      "Administrative": 6,
+      "Administrative_Duration": 242.094,
+      "Informational": 1,
+      "Informational_Duration": 16.121,
+      "ProductRelated": 36,
+      "ProductRelated_Duration": 1201.616,
+      "BounceRates": 0.0107,
+      "ExitRates": 0.01,
+      "PageValues": 5.714,
+      "SpecialDay": 0.6,
+      "Month": "June",
+      "OperatingSystems": 6,
+      "Browser": 1,
+      "Region": 5,
+      "TrafficType": 5,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": false,
+      "Revenue": false
+    },
+    {
+      "Administrative": 6,
+      "Administrative_Duration": 274.319,
+      "Informational": 1,
+      "Informational_Duration": 29.143,
+      "ProductRelated": 27,
+      "ProductRelated_Duration": 411.392,
+      "BounceRates": 0.0,
+      "ExitRates": 0.0432,
+      "PageValues": 0.0,
+      "SpecialDay": 0.0,
+      "Month": "Mar",
+      "OperatingSystems": 2,
+      "Browser": 7,
+      "Region": 4,
+      "TrafficType": 1,
+      "VisitorType": "Returning_Visitor",
+      "Weekend": true,
+      "Revenue": false
+    }
+  ]
+}

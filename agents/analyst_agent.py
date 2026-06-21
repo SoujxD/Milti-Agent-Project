@@ -44,7 +44,7 @@ DEFAULT_MODELS = [
 ]
 
 # Prompt style used by the LangChain code path when no explicit style is given.
-DEFAULT_LC_PROMPT_STYLE = "executive"
+DEFAULT_LC_PROMPT_STYLE = "evidence_constrained"
 
 # Maps the legacy categorical confidence to the new 0-1 float scale.
 _CONFIDENCE_TO_FLOAT = {"low": 0.3, "medium": 0.6, "high": 0.9}
